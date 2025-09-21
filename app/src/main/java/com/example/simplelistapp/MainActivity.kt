@@ -47,3 +47,18 @@ val sampleCompanies = listOf(
     SampleCompany("Facebook", "Social media and technology company", R.drawable.ic_launcher_foreground)
 )
 
+@Composable
+fun CompanyListPreview() {
+    LazyColumn(
+        modifier = Modifier
+            .fillMaxSize()
+            .padding(16.dp),
+        verticalArrangement = Arrangement.spacedBy(12.dp),
+        contentPadding = PaddingValues(bottom = 16.dp)
+    ) {
+        items(sampleCompanies) { company ->
+            CompanyCardPreview(company = company)
+        }
+    }
+}
+
